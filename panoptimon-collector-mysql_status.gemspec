@@ -8,8 +8,8 @@ Gem::Specification.new { |gem|
   gem.homepage = "https://github.com/synthesist/panoptimon"
   gem.license = 'bsd' # The (three-clause) BSD License
   gem.files   = `git ls-files`.split($\)
+  gem.executables = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
 
   gem.add_dependency 'panoptimon', '~> 0.0.2'
-  gem.add_dependency 'json'
   gem.add_dependency 'mysql'
 }
