@@ -38,7 +38,7 @@ def self.run (config)
   m.keys.each {|k|
     n = m[k].as_number
     if n
-      m[k] = n 
+      m[k] = n
     else
       info[k] = m.delete(k)
     end
@@ -49,4 +49,5 @@ end
 
 end
 
-Mysql_status.run(JSON::parse(ARGV[0])) if __FILE__ == $0
+config = JSON::parse(ARGV[0])
+Mysql_status.run(config)
