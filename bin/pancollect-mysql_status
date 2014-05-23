@@ -28,7 +28,9 @@ def self.get_slave_status (db)
 end
 
 def self.run (config)
-  db = Mysql.new(*
+  db = Mysql.init
+  db.options(Mysql::SECURE_AUTH, val=true)
+  db.connect(*
     %w{hostname username password database port socket}.
     map {|k| config[k]})
 
