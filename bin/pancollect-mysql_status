@@ -35,7 +35,7 @@ def self.run (config)
     map {|k| config[k]})
 
   m = get_status(db)
-  m.merge(get_slave_status(db))
+  m.merge!(get_slave_status(db))
   info = {}
   m.keys.each {|k|
     n = m[k].as_number
