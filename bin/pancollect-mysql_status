@@ -51,5 +51,5 @@ end
 
 end
 
-config = JSON::parse(ARGV[0])
+config = ARGV[0] ? JSON.parse(ARGV[0], {symbolize_names: true}) : {}
 Mysql_status.run(config)
