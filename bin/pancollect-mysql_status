@@ -12,7 +12,7 @@ end; end
 class Mysql_status
 
 def self.get_status (db)
-  rs = db.query("SHOW STATUS")
+  rs = db.query("SHOW GLOBAL STATUS")
   h = {}
   while( r = rs.fetch_row )
     h[r[0].downcase] = r[1]
